@@ -3,12 +3,17 @@
 {% block title %} Contact {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<span>OK</span>
-
+<h2>Ajouter un nouveau contact</h2>
+<br>
+{{ form_start(monFormulaire) }}
+    {{ form_row(monFormulaire.nom) }}
+    {{ form_row(monFormulaire.prenom) }}
+    {{ form_row(monFormulaire.adresse) }}
+    {{ form_row(monFormulaire.cp) }}
+    {{ form_row(monFormulaire.ville) }}
+    {{ form_row(monFormulaire.email) }}
+    {{ form_row(monFormulaire.age) }}
+    {{ form_row(monFormulaire.Valider, {'label':'valider'}) }}
+{{ form_end(monFormulaire) }}
 {% endblock %}
 

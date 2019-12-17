@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{# {% form_theme monFormulaire 'bootstrap_4_layout.html.twig' %} #}
+{% block title %} Gestion articles {% endblock %}
+
+{% block body %}
+{% if edition %}
+    <h1>Modifier un article</h1>
+{% else %}
+    <h1>Poster un nouvel article</h1>
+{% endif %}
+
+<br>
+{# {{ form(monFormulaire) }} #}
+{{ form_start(monFormulaire) }}
+
+    {{ form_row(monFormulaire.titre) }}
+    {{ form_row(monFormulaire.corps) }}
+    {{ form_row(monFormulaire.auteur) }}
+
+    {% if edition %}
+    {{ form_row(monFormulaire.Valider, {'label':'modifier'}) }}
+    {% else %}
+    {{ form_row(monFormulaire.Valider, {'label':'créer'}) }}
+    {% endif %}
+    
+{{ form_end(monFormulaire) }}
+<br>
+
+<button><a href="{{ path("blog") }}"> Retour </a></button>
+{% endblock %}

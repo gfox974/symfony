@@ -26,3 +26,22 @@
   17 composer require orm-fixtures
   18 php .\bin\console make:fixtures
   19 php .\bin\console doctrine:fixtures:load
+
+  ---------
+  on va installer bootswatch ( basé sur bootstrap )
+
+  parsing des entités :
+  lecture / fetching -> repository
+  operations crud -> manager
+
+  -->
+  stylisation globale -> config/packages/twig.yaml
+  sinon implicite {% form_theme monFormulaire 'bootstrap_4_layout.html.twig' %}
+
+-- exo forms :
+ajouter une possibilité de modifier / mettre a jour un article
+
+exo :
+creer un formulaire d'ajout de contacts :
+nom, prenom, adresse, cp, ville, email, age, creele
+( tout le chainage entity, routes, controller, template, etc )
