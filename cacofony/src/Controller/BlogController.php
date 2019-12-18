@@ -14,6 +14,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use App\Entity\Contact;
 use App\Repository\ContactRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Categorie;
 
 class BlogController extends AbstractController
 {
@@ -56,6 +58,7 @@ class BlogController extends AbstractController
             $contact = new Contact();
         }
         $form = $this->createFormBuilder($contact)
+            ->add('photo')
             ->add('nom')
             ->add('prenom')
             ->add('adresse')
@@ -117,6 +120,10 @@ class BlogController extends AbstractController
         // $form->add('titre')
             ->add('titre')
             ->add('corps')
+            ->add('categorie', EntityType::class, [
+                'class' => Categorie::class,
+                'choice_label' => 'libelle' 
+            ])
             ->add('auteur')
         ->add('Valider', SubmitType::class)
         ->getForm();

@@ -45,3 +45,6 @@ exo :
 creer un formulaire d'ajout de contacts :
 nom, prenom, adresse, cp, ville, email, age, creele
 ( tout le chainage entity, routes, controller, template, etc )
+
+exemples constraints -> voir class contact
+exemples relation db -> voir class article (lien entités article - categorie)

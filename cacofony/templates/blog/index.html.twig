@@ -8,6 +8,7 @@
     <tr>
       <th class= "col-2" scope="col">Titre</th>
       <th scope="col">Contenu</th>
+      <th scope="col">Categorie</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
     <tr class="table-info">
       <th scope="row"> <a href="{{ path('detail', {'id': article.id}) }}"> {{ article.titre }} </a></th>
       <td>{{ article.corps }}</td>
+      <td>{{ article.categorie.libelle }}</td>
     </tr>
     {% endfor %}
   </tbody>

@@ -5,15 +5,22 @@
 {% block body %}
 <h2>Ajouter un nouveau contact</h2>
 <br>
-{{ form_start(monFormulaire) }}
-    {{ form_row(monFormulaire.nom) }}
-    {{ form_row(monFormulaire.prenom) }}
-    {{ form_row(monFormulaire.adresse) }}
-    {{ form_row(monFormulaire.cp) }}
-    {{ form_row(monFormulaire.ville) }}
-    {{ form_row(monFormulaire.email) }}
-    {{ form_row(monFormulaire.age) }}
-    {{ form_row(monFormulaire.Valider, {'label':'valider'}) }}
-{{ form_end(monFormulaire) }}
+<div class="container">
+    <div class="row justify-content:center">
+        <div class="col-6">
+            {{ form_start(monFormulaire) }}
+                {{ form_row(monFormulaire.photo) }}
+                {{ form_row(monFormulaire.nom) }}
+                {{ form_row(monFormulaire.prenom) }}
+                {{ form_row(monFormulaire.adresse) }}
+                {{ form_row(monFormulaire.cp) }}
+                {{ form_row(monFormulaire.ville) }}
+                {{ form_row(monFormulaire.email) }}
+                {{ form_row(monFormulaire.age) }}
+                {{ form_row(monFormulaire.Valider, {'label':'valider'}) }}
+            {{ form_end(monFormulaire) }}
+        </div>
+    </div>
+</div>
 {% endblock %}
 
