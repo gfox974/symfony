@@ -22,7 +22,10 @@ Used =
     composer require doctrine/orm
     composer require --dev doctrine/doctrine-fixtures-bundle
     composer req --dev fzaninotto/faker
+    composer require symfony/security-bundle
+    composer require symfony/swiftmailer-bundle
 
+bin/console make:user -> author comme users
     php .\bin\console make:controller ForumController
     -> conf dans config/?env
     php .\bin\console doctrine:database:create
@@ -35,3 +38,11 @@ Message -> thread/subject : ManyToOne @Thread
 
 php .\bin\console make:migration
 php .\bin\console doctrine:migrations:migrate
+
+---
+php .\bin\console make:fixtures (fakerfixtures)
+php .\bin\console doctrine:fixtures:load
+php bin/console make:registration-form
+
+-- todo :
+activation de compte utilisateur via mail de confirmation
