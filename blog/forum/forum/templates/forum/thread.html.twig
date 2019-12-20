@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lecture de l'article{% endblock %}
+
+{% block body %}
+<div class="flex items-center justify-center">
+    <div class="w-full sm:w-1/2 md:w-1/3">
+        <h1 class="font-sans font-thin mb-4">{{ thread.subject }}</h1>
+        <p class="text-grey mb-3">posté par {{ thread.author.name }} le {{ thread.createdAt | date("d/m/y") }}</p>
+        <p class="text-grey-darkest mb-6 leading-tight">{{ thread.text }}</p>
+    <div>
+        <button><a href="{{ path("forum") }}"> Retour </a></button>
+        <button><a href="#" class="text-black">Commenter</a></button>
+    </div>
+    </div>
+</div>
+<br>
+<div class="flex items-center justify-center">
+    <div class="container">
+		<table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+			<thead class="text-white">
+				<tr class="bg-teal-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+					<th class="p-3 text-left">Commentaire</th>
+					<th class="p-3 text-left">Auteur</th>
+					<th class="p-3 text-left">Date</th>
+				</tr>
+			</thead>
+			<tbody class="flex-1 sm:flex-none">
+            {% for message in messages %}
+				<tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+					<td class="border-grey-light border hover:bg-gray-100 p-3">{{ message.text }}</td>
+					<td class="border-grey-light border hover:bg-gray-100 p-3">{{ message.author.name }}</td>
+				    <td class="border-grey-light border hover:bg-gray-100 p-3">{{ message.createdAt | date("d/m/y") }}</td>
+                </tr>
+            {% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}

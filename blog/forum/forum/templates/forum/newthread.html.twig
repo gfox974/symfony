@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Nouveau thread {% endblock %}
+
+{% block body %}
+<h1>Ouvrir un nouveau sujet</h1>
+<br>
+{{ form_start(monFormulaire) }}
+    {{ form_row(monFormulaire.subject) }}
+    {{ form_row(monFormulaire.text) }}
+    {{ form_row(monFormulaire.Valider, {'label':'créer'}) }}
+{{ form_end(monFormulaire) }}
+<br>
+<button><a href="{{ path("forum") }}"> Retour </a></button>
+{% endblock %}
