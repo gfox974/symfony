@@ -34,3 +34,9 @@ packages :
 composer require form validator twig-bundle security-csrf annotations
 php bin/console make:crud -> sur l'entité article
  -> api crud dispo ici apres : http://localhost:8000/article/
+
+ --- creer une table auteur : nom / prenom, avec le crud qui va bien
+ php bin/console make:entity Auteur
+ php bin/console make:migration
+ php bin\console doctrine:migrations:migrate
+ php bin/console make:crud -> Auteur = http://localhost:8000/auteur/
